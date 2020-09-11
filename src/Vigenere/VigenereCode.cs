@@ -82,10 +82,11 @@ namespace Vigenere.Library
             int result = 0;
             foreach (char c in fullAlphabet)
             {
-                if (c.ToString() == letter)
+                if (c.ToString().ToLower() == letter)
                 {
                     break;
                 }
+                result++;
             }
             return result;
         }
