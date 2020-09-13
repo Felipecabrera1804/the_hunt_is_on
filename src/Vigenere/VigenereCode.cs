@@ -16,7 +16,7 @@ namespace Vigenere.Library
         public string Encrypt(string encryptedPrhase)
         {
             StringBuilder decrypted = new StringBuilder();
-            for (int i = 0; i <= encryptedPrhase.Length; i++)
+            for (int i = 0; i < encryptedPrhase.Length; i++)
             {
                 //Se obtiene la letra a encriptar
                 string valueToEncrypt = encryptedPrhase[i].ToString().ToUpper();
@@ -27,7 +27,7 @@ namespace Vigenere.Library
                 //Se encripta el valor aplicando el desplazamiento
                 string encrypted = Shift(keyPosition + salt, valueToEncrypt);
                 //Se agrega el resultado a la cadena encriptada
-                decrypted.Append(valueToEncrypt);
+                decrypted.Append(encrypted);
             }
             return decrypted.ToString();
         }
@@ -69,7 +69,7 @@ namespace Vigenere.Library
         /// <returns></returns>
         private string Shift(int shift, string charToShift)
         {
-            int totalShift = GetLetterNumber(charToShift) + shift;
+            int totalShift = GetLetterNumber(charToShift) + shift + fullAlphabet.Length;
             char result = fullAlphabet[totalShift % fullAlphabet.Length];
             return result.ToString();
         }
