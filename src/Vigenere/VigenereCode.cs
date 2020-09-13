@@ -6,11 +6,12 @@ namespace Vigenere.Library
     public class VigenereCode
     {
         private string codeWord;
-        private int salt;
+        private int salt { get; set; }
         private const string fullAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         public VigenereCode(string codeWord, int salt)
         {
             this.codeWord = codeWord;
+            this.salt = salt;
         }
         public string Encrypt(string encryptedPrhase)
         {
