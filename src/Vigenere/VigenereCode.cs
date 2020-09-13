@@ -33,7 +33,7 @@ namespace Vigenere.Library
         public string Decrypt(string encryptedPrhase)
         {
             StringBuilder decrypted = new StringBuilder();
-            for (int i = 0; i <= encryptedPrhase.Length; i++)
+            for (int i = 0; i < encryptedPrhase.Length; i++)
             {
                 //Se obtiene la letra a desencriptar
                 string valueToDecrypt = encryptedPrhase[i].ToString().ToUpper();
@@ -82,7 +82,7 @@ namespace Vigenere.Library
             int result = 0;
             foreach (char c in fullAlphabet)
             {
-                if (c.ToString().ToLower() == letter)
+                if (c.ToString().ToLower() == letter.ToLower())
                 {
                     break;
                 }
